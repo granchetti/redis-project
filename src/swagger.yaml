@@ -1,0 +1,212 @@
+openapi: 3.0.0
+info:
+  title: API de Productos
+  version: "1.0"
+paths:
+  /api/products:
+    post:
+      summary: Crear un producto
+      description: "Crea un nuevo producto. El campo 'id' se genera automáticamente en el servidor."
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                price:
+                  type: number
+                category:
+                  type: string
+              required:
+                - name
+                - price
+                - category
+      responses:
+        "201":
+          description: Producto creado con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  product:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: "ID generada automáticamente por el servidor."
+                      name:
+                        type: string
+                      price:
+                        type: number
+                      category:
+                        type: string
+                    required:
+                      - id
+                      - name
+                      - price
+                      - category
+
+    get:
+      summary: Obtener todos los productos
+      responses:
+        "200":
+          description: Lista de productos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    name:
+                      type: string
+                    price:
+                      type: number
+                    category:
+                      type: string
+
+  /api/products/{id}:
+    get:
+      summary: Obtener un producto por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: ID del producto a obtener
+      responses:
+        "200":
+          description: Producto encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+                  price:
+                    type: number
+                  category:
+                    type: string
+        "404":
+          description: Producto no encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+    put:
+      summary: Actualizar un producto existente
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: ID del producto a actualizar
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                price:
+                  type: number
+                category:
+                  type: string
+      responses:
+        "200":
+          description: Producto actualizado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "404":
+          description: Producto no encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+    delete:
+      summary: Eliminar un producto por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: ID del producto a eliminar
+      responses:
+        "200":
+          description: Producto eliminado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        "404":
+          description: Producto no encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+
+  /api/products/name/{name}:
+    delete:
+      summary: Eliminar productos por nombre
+      description: "Elimina todos los productos cuyo campo 'name' coincida con el valor proporcionado."
+      parameters:
+        - in: path
+          name: name
+          required: true
+          schema:
+            type: string
+          description: Nombre del producto a eliminar
+      responses:
+        "200":
+          description: Productos eliminados
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "2 producto(s) eliminado(s)"
+        "404":
+          description: Producto no encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Producto no encontrado"

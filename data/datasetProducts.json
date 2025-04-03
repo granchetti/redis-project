@@ -1,0 +1,112 @@
+[
+  {
+    "id": "p1",
+    "name": "Laptop Pro",
+    "price": 1500,
+    "category": "Electrónica"
+  },
+  {
+    "id": "p2",
+    "name": "Smartphone X",
+    "price": 800,
+    "category": "Electrónica"
+  },
+  { "id": "p3", "name": "Tablet A", "price": 500, "category": "Electrónica" },
+  {
+    "id": "p4",
+    "name": "Auriculares Bluetooth",
+    "price": 120,
+    "category": "Accesorios"
+  },
+  {
+    "id": "p5",
+    "name": "Reloj Inteligente",
+    "price": 250,
+    "category": "Wearables"
+  },
+  {
+    "id": "p6",
+    "name": "Cámara Digital",
+    "price": 700,
+    "category": "Fotografía"
+  },
+  {
+    "id": "p7",
+    "name": "Televisor 4K",
+    "price": 1000,
+    "category": "Electrónica"
+  },
+  {
+    "id": "p8",
+    "name": "Altavoz Inteligente",
+    "price": 150,
+    "category": "Hogar"
+  },
+  {
+    "id": "p9",
+    "name": "Consola de Videojuegos",
+    "price": 400,
+    "category": "Entretenimiento"
+  },
+  {
+    "id": "p10",
+    "name": "Impresora Multifunción",
+    "price": 200,
+    "category": "Oficina"
+  },
+  { "id": "p11", "name": "Monitor 27''", "price": 300, "category": "Oficina" },
+  {
+    "id": "p12",
+    "name": "Teclado Mecánico",
+    "price": 100,
+    "category": "Accesorios"
+  },
+  {
+    "id": "p13",
+    "name": "Mouse Inalámbrico",
+    "price": 50,
+    "category": "Accesorios"
+  },
+  {
+    "id": "p14",
+    "name": "Disco Duro SSD",
+    "price": 150,
+    "category": "Informática"
+  },
+  {
+    "id": "p15",
+    "name": "Tarjeta Gráfica",
+    "price": 600,
+    "category": "Informática"
+  },
+  {
+    "id": "p16",
+    "name": "Memoria RAM 16GB",
+    "price": 80,
+    "category": "Informática"
+  },
+  {
+    "id": "p17",
+    "name": "Microondas",
+    "price": 180,
+    "category": "Electrodomésticos"
+  },
+  {
+    "id": "p18",
+    "name": "Refrigerador",
+    "price": 1200,
+    "category": "Electrodomésticos"
+  },
+  {
+    "id": "p19",
+    "name": "Licuadora",
+    "price": 90,
+    "category": "Electrodomésticos"
+  },
+  {
+    "id": "p20",
+    "name": "Cafetera",
+    "price": 70,
+    "category": "Electrodomésticos"
+  }
+]
