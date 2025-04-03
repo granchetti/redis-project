@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "docker-compose up -d redis && jest && docker-compose down",
     "build": "docker-compose -f docker-compose.yml up --build"
   },
   "keywords": [],
@@ -37,8 +37,8 @@
     "preset": "ts-jest",
     "testEnvironment": "node",
     "moduleFileExtensions": [
-      "js",
-      "ts"
+      "ts",
+      "js"
     ],
     "testMatch": [
       "**/tests/**/*.test.ts"

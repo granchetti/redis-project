@@ -8,7 +8,7 @@ import path from "path";
 const app = express();
 app.use(express.json());
 
-const redisClient = createClient({ url: "redis://redis:6379" });
+const redisClient = createClient({ url: "redis://localhost:6379" });
 redisClient.on("error", (err) => console.error("Error en Redis:", err));
 redisClient.connect();
 
