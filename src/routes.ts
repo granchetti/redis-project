@@ -2,17 +2,6 @@ import { Router, Request, Response } from "express";
 
 const router = Router();
 
-async function cleanProductsWithoutId(client: any): Promise<void> {
-  const keys = await client.keys("product:*");
-  for (const key of keys) {
-    const product = await client.hGetAll(key);
-    if (!product.id) {
-      await client.del(key);
-      console.log(`Eliminado ${key} por no tener id`);
-    }
-  }
-}
-
 async function generateNewProductId(client: any): Promise<string> {
   const keys = await client.keys("product:p*");
   const numbers = keys.map((key: string) => {

@@ -1,10 +1,9 @@
-// src/loadDataset.ts
 import { createClient } from 'redis';
 import fs from 'fs/promises';
 import path from 'path';
 import dotenv from 'dotenv';
 
-dotenv.config(); // Carga variables de entorno
+dotenv.config();
 
 async function loadDataset() {
   const redisUrl = process.env.REDIS_URL || 'redis://localhost:6379';
