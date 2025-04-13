@@ -7,8 +7,8 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "docker-compose up -d redis && jest && docker-compose down",
-    "build": "docker-compose -f docker-compose.yml up --build"
+    "test": "docker-compose up -d redis && jest",
+    "build": "docker-compose up --build"
   },
   "keywords": [],
   "author": "",

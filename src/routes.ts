@@ -25,7 +25,6 @@ router.post("/products", async (req: Request, res: Response): Promise<void> => {
   res.status(201).json({ message: "Producto creado", product });
 });
 
-// Listar productos
 router.get("/products", async (req: Request, res: Response): Promise<void> => {
   const client = req.app.locals.redisClient;
   const keys = await client.keys("product:*");
@@ -39,7 +38,7 @@ router.get("/products", async (req: Request, res: Response): Promise<void> => {
   res.json(products);
 });
 
-// Leer producto
+
 router.get(
   "/products/:id",
   async (req: Request, res: Response): Promise<void> => {
@@ -54,7 +53,6 @@ router.get(
   }
 );
 
-// Actualizar producto
 router.put(
   "/products/:id",
   async (req: Request, res: Response): Promise<void> => {
@@ -70,7 +68,6 @@ router.put(
   }
 );
 
-// Borrar producto por id
 router.delete(
   "/products/:id",
   async (req: Request, res: Response): Promise<void> => {
@@ -85,7 +82,6 @@ router.delete(
   }
 );
 
-// Borrar productos por nombre
 router.delete(
   "/products/name/:name",
   async (req: Request, res: Response): Promise<void> => {

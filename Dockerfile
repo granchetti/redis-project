@@ -1,4 +1,4 @@
-FROM node:18 AS build
+FROM node:23-slim AS build
 
 WORKDIR /usr/src/app
 
@@ -11,7 +11,8 @@ RUN npx tsc
 
 RUN cp src/swagger.yaml dist/swagger.yaml
 
-FROM node:18
+FROM node:23-slim
+
 WORKDIR /usr/src/app
 
 COPY --from=build /usr/src/app/dist ./dist
@@ -21,4 +22,4 @@ RUN npm install --only=production
 
 EXPOSE 5000
 
-CMD ["node", "dist/index.js"]
+CMD [ "node", "dist/server.js" ]
