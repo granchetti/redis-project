@@ -17,7 +17,8 @@ router.post("/products", async (req: Request, res: Response): Promise<void> => {
   const client = req.app.locals.redisClient;
 
   if (!product.id) {
-    product.id = await generateNewProductId(client);
+    const newId = await generateNewProductId(client);
+    product = { id: newId, ...product };
   }
 
   const key = `product:${product.id}`;
@@ -37,7 +38,6 @@ router.get("/products", async (req: Request, res: Response): Promise<void> => {
 
   res.json(products);
 });
-
 
 router.get(
   "/products/:id",
