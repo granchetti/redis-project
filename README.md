@@ -24,11 +24,8 @@ npm install
 npm run build
 ```
 
-- API: `http://localhost:5000/api/products`
-- Swagger: `http://localhost:5000/api-docs`
-
-
-
+🔗 API base: [`http://localhost:5000/api/products`](http://localhost:5000/api/products)  
+📘 Swagger UI: [`http://localhost:5000/api-docs`](http://localhost:5000/api-docs)
 
 
 ## 📦 API Endpoints
@@ -60,7 +57,13 @@ npm run test
 - `Dockerfile` & `docker-compose.yml`
 
 
-## ✍️ Author
+## 📚 References
 
-**Giulia Ranchetti** – April 2025  
-Master in Software Development and Architecture
+- Redis – https://redis.io/
+- Docker Documentation – https://docs.docker.com/
+- Swagger/OpenAPI – https://swagger.io/specification/
+- Jest Testing Framework – https://jestjs.io/
+- Supertest – https://github.com/visionmedia/supertest
+- TypeScript – https://www.typescriptlang.org/
+- Express – https://expressjs.com/
+- Node.js – https://nodejs.org/
